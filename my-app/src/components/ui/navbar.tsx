@@ -37,10 +37,10 @@ export default function Navbar() {
                                 alt="Image"
                                 width="200"
                                 height="200"
-                                className=" h-[45%] w-[45%]" />
+                                className=" h-[40%] w-[40%]" />
                             <div>
-                                <h4 className='text-xl leading-5 font-semibold tracking-wide'>U&#8209;Serve</h4>
-                                <p className='leading-3 text-sm'>Student</p>
+                                <h4 className='text-xl leading-4 font-semibold tracking-wide'>U&#8209;Serve</h4>
+                                <p className='leading-3 text-xs font-extralight'>Student</p>
                             </div>
                         </div>
 
@@ -87,10 +87,10 @@ export default function Navbar() {
                         alt="Image"
                         width="200"
                         height="200"
-                        className=" h-[45%] w-[45%]" />
+                        className=" h-[40%] w-[40%]" />
                     <div>
                         <h4 className='text-xl leading-5 font-semibold tracking-wide'>U&#8209;Serve</h4>
-                        <p className='leading-3 text-sm'>Student</p>
+                        <p className='leading-4 text-xs font-extralight'>Student</p>
                     </div>
                 </div>
                 <div className='flex space-x-6'>
@@ -116,7 +116,7 @@ export default function Navbar() {
                             className="text-zinc-50 focus:text-red-500 flex flex-col items-center transition-colors"
                         >
                             <item.icon className="h-6 w-6" />
-                            <span className="text-xs font-medium mt-1">{item.name}</span>
+                            {/* <span className="text-xs font-medium mt-1">{item.name}</span> */}
                         </Link>
                     ))}
                 </div>
