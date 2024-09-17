@@ -7,7 +7,7 @@ const LoadDB = async()=>{
 
 LoadDB();
 
-export async function GET(request){
+export async function GET(){
     return NextResponse.json({msg:"get method hit"})
 
 }

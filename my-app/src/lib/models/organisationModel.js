@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose"
 
 organisationModel.js
 const organizationSchema = new mongoose.Schema({
