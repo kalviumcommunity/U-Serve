@@ -10,11 +10,23 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+
 import {
     Avatar,
     AvatarFallback,
     AvatarImage,
 } from "@/components/ui/avatar"
+
+import {
+    Sheet,
+    SheetClose,
+    SheetContent,
+    SheetDescription,
+    SheetFooter,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet"
 
 const navItems = [
     { name: 'Calendar', icon: Calendar },
@@ -57,9 +69,26 @@ export default function Navbar() {
                         </div>
 
                         <div className="flex items-center space-x-4">
-                            <Button variant="outline" className='hover:bg-zinc-800 hover:text-zinc-50 h-10 w-10 p-2'>
-                                <Bell className="h-5 w-5" />
-                            </Button>
+                            <Sheet>
+                                <SheetTrigger asChild>
+                                    <Button variant="outline" className='hover:bg-zinc-800 hover:text-zinc-50 h-10 w-10 p-2'>
+                                        <Bell className="h-5 w-5" />
+                                    </Button>
+                                </SheetTrigger>
+                                <SheetContent className='bg-zinc-950 border-l-2 border-zinc-900'>
+                                    <SheetHeader>
+                                        <SheetTitle className='flex items-center gap-2'><Bell className="h-5 w-5" />Notifications</SheetTitle>
+                                        <SheetDescription>
+                                            All your notifications, here.
+                                        </SheetDescription>
+                                    </SheetHeader>
+                                    <SheetFooter>
+                                        <SheetClose asChild>{/*Modal close*/}
+
+                                        </SheetClose>
+                                    </SheetFooter>
+                                </SheetContent>
+                            </Sheet>
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <button className="flex items-center space-x-2">
@@ -81,7 +110,7 @@ export default function Navbar() {
             </nav>
 
             {/* Mobile Top Bar */}
-            <nav className="md:hidden flex justify-between items-center p-3 z-50 backdrop-blur-lg bg-zinc-950/70 border-b-2 border-zinc-800 transition-colors">
+            <nav className="md:hidden flex justify-between items-center fixed top-0 right-0 left-0 p-3 z-50 backdrop-blur-lg bg-zinc-950/70 border-b-2 border-zinc-800 transition-colors">
                 <div className="flex items-center space-x-2">
                     <Image src="/Logo.svg"
                         alt="Image"
@@ -94,15 +123,41 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className='flex space-x-6'>
-                    <Button variant="outline" className='hover:bg-zinc-800 focus:text-red-500 h-10 w-10 p-2'>
-                        <Bell className="h-6 w-6" />
-                    </Button>
-                    <button className="flex items-center">
-                        <Avatar>
-                            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                            <AvatarFallback>CN</AvatarFallback>
-                        </Avatar>
-                    </button>
+                    <Sheet>
+                        <SheetTrigger asChild>
+                            <Button variant="outline" className='hover:bg-zinc-800 hover:text-zinc-50 h-10 w-10 p-2'>
+                                <Bell className="h-5 w-5" />
+                            </Button>
+                        </SheetTrigger>
+                        <SheetContent className='bg-zinc-950 border-l-2 border-zinc-900'>
+                            <SheetHeader>
+                                <SheetTitle className='flex items-center gap-2'><Bell className="h-5 w-5" />Notifications</SheetTitle>
+                                <SheetDescription>
+                                    All your notifications, here.
+                                </SheetDescription>
+                            </SheetHeader>
+                            <SheetFooter>
+                                <SheetClose asChild>{/*Modal close*/}
+
+                                </SheetClose>
+                            </SheetFooter>
+                        </SheetContent>
+                    </Sheet>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <button className="flex items-center space-x-2">
+                                <Avatar>
+                                    <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                                    <AvatarFallback>CN</AvatarFallback>
+                                </Avatar>
+                            </button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                            <DropdownMenuItem>Profile</DropdownMenuItem>
+                            <DropdownMenuItem>Settings</DropdownMenuItem>
+                            <DropdownMenuItem>Logout</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
                 </div>
                 {/* Spacer for alignment */}
             </nav>
@@ -113,7 +168,7 @@ export default function Navbar() {
                         <Link
                             key={item.name}
                             href="#"
-                            className="text-zinc-50 focus:text-red-500 flex flex-col items-center transition-colors"
+                            className="text-zinc-50 focus:text-red-600 flex flex-col items-center transition-colors"
                         >
                             <item.icon className="h-6 w-6" />
                             {/* <span className="text-xs font-medium mt-1">{item.name}</span> */}

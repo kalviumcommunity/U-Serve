@@ -60,7 +60,7 @@ export default function Dashboard() {
                             </div>
                             <Input id="password" type="password" className="focus:border-zinc-100 " required />
                         </div>
-                        <Button type="submit" className="w-full bg-zinc-50 text-zinc-800 hover:bg-zinc-200">
+                        <Button type="submit" className="w-full bg-red-700 text-zinc-50 hover:bg-red-800">
                             Login
                         </Button>
                         <Button variant="outline" className="w-full hover:bg-zinc-800 hover:text-zinc-50 gap-2">
