@@ -24,7 +24,7 @@ export default function FeedbackPage() {
       title: "Feedback Submitted",
       description: "Thank you for your feedback!",
       duration: 2500, // Toast will disappear after 3 seconds
-      className: "bg-zinc-950 border-zinc-800 w-[88%] ml-12"
+      className: "bg-zinc-950 border-zinc-800"
     })
 
     // Reset form
@@ -37,7 +37,7 @@ export default function FeedbackPage() {
     <div className="min-h-screen bg-zinc-950 text-zinc-50 md:pt-28 pt-28 p-3">
       <div className="max-w-3xl mx-auto space-y-8">
         <div>
-          <h1 className="text-3xl font-bold text-zinc-100">Feedback Form</h1>
+          <h1 className="md:block hidden text-3xl font-bold text-zinc-100">Feedback Form</h1>
           <p className="text-zinc-400 mt-2">We value your feedback. Please let us know how we&apos;re doing.</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">

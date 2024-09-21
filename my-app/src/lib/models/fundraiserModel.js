@@ -9,19 +9,31 @@ const fundraiserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    organisation: {
+    organization: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'organisationdatas',
+        ref: 'organizationdatas',
         required: true,
     },
-    goalAmount: {
+    location:{
+        type:String,
+        required: true
+    },
+    endDate:{
+        type: Date,
+        required: true
+    },
+    goal: {
         type: Number,
         required: true,
     },
-    currentAmount: {
+    raised: {
         type: Number,
         default: 0,
     },
+    category:{
+        type: String,
+        required: true,
+    }
 });
 
 const Fundraiser = mongoose.model('Fundraiser', fundraiserSchema);
