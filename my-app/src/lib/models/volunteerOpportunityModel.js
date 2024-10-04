@@ -9,9 +9,9 @@ const volunteerOpportunitySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    organisation: {
+    organization: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'organisationdatas',
+        ref: 'organizationdatas',
         required: true,
     },
     location: {

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import Cookies from 'js-cookie';
 import { usePathname } from 'next/navigation';
 import { Bell, Calendar, BookText, MessageSquare, HelpCircle, HandCoins, HeartHandshake } from 'lucide-react'
 import { Button } from "@/components/ui/button"
@@ -11,7 +12,6 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-
 import {
     Avatar,
     AvatarFallback,
@@ -39,13 +39,18 @@ const navItems = [
 ]
 
 export default function Navbar() {
+    const handleLogout = () => {
+        Cookies.remove("token");
+        window.location.href = "/auth/login";
+    };
+
     const pathname = usePathname();
     const normalizedPath = pathname.toLowerCase();
 
     // Find the current nav item name based on the route
     const currentNavItem = navItems.find(item => `/${item.name.toLowerCase()}` === normalizedPath);
 
-    
+
     return (
         <>
             {/* Desktop Navbar */}
@@ -111,7 +116,7 @@ export default function Navbar() {
                                 <DropdownMenuContent align="end">
                                     <DropdownMenuItem>Profile</DropdownMenuItem>
                                     <DropdownMenuItem>Settings</DropdownMenuItem>
-                                    <DropdownMenuItem>Logout</DropdownMenuItem>
+                                    <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
                                 </DropdownMenuContent>
                             </DropdownMenu>
                         </div>
