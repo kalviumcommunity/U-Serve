@@ -48,12 +48,10 @@ export default function Dashboard() {
             const data = await response.json()
 
             if (response.ok) {
-                console.log('Token received:', data.token)
 
                 // Store the token in cookies
                 Cookies.set('token', data.token, { expires: 1 }) // Set cookie for 1 day
 
-                console.log('Token set in cookies:', Cookies.get('token'))
                 toast({
                     title: "Login successful",
                     description: "Redirecting to Home page",
