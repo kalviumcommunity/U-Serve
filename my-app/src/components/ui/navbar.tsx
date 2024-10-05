@@ -41,7 +41,7 @@ const navItems = [
 export default function Navbar() {
     const handleLogout = () => {
         Cookies.remove("token");
-        window.location.href = "/auth/login";
+        window.location.reload();
     };
 
     const pathname = usePathname();
