@@ -7,6 +7,9 @@
   --foreground: #171717;
 }
 
+::selection{
+  background-color: #B91C1C;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #09090B;
