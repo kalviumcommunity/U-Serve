@@ -34,7 +34,7 @@ An innovative platform tailored for college campuses to enhance community engage
 - **Frontend:** Next.js, React
 - **Backend:** Node.js, Express
 - **Database:** MongoDB
-- **Authentication:** Clerk
+- **Authentication:** JWT and Google One Tap
 - **Deployment:** Vercel
 - **Styling:** ShadcnUI
 
