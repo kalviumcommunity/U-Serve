@@ -32,9 +32,9 @@ export default function FAQPage() {
   ]
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 bg-zinc-950 text-zinc-50 min-h-screen">
-      <div className="container mx-auto max-w-3xl">
-        <Card className="bg-zinc-900 border border-zinc-800">
+    <div className="min-h-screen bg-zinc-950 text-zinc-50 sm:pt-36 pt-20 p-3">
+      <div className="max-w-3xl mx-auto space-y-8">
+        <Card className="bg-zinc-950 border-none">
           <CardHeader>
             <CardTitle className="text-3xl font-bold text-center mb-6 text-zinc-100">Frequently Asked Questions</CardTitle>
           </CardHeader>
