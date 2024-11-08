@@ -45,12 +45,15 @@ export default function Dashboard({}) {
                     role: role.toLowerCase(),
                 }),
             })
+
             const data = await response.json()
 
             if (response.ok) {
 
                 // Store the token in cookies
                 Cookies.set('token', data.token, { expires: 1 }) // Set cookie for 1 day
+                Cookies.set('role',role, {expires: 1})
+                Cookies.set('email',email,{expires: 1})
 
                 toast({
                     title: "Login successful",

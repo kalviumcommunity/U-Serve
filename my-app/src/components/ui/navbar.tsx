@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Cookies from 'js-cookie';
@@ -59,7 +59,18 @@ const navItems = [
 ]
 
 export default function Navbar() {
-    const [role, setRole] = useState('volunteer')
+    const [role, setRole] = useState('');
+    const [email, setEmail] = useState('');
+
+    useEffect(() => {
+        const savedEmail = Cookies.get('email');
+        setEmail(savedEmail || ''); 
+    }, []);
+
+    useEffect(() => {
+        const savedRole = Cookies.get('role');
+        setRole(savedRole || 'Student'); 
+    }, []);
 
     const handleLogout = () => {
         Cookies.remove("token");
@@ -90,7 +101,7 @@ export default function Navbar() {
                                     className=" h-[40%] w-[40%]" />
                                 <div>
                                     <h4 className='text-xl leading-4 font-semibold tracking-wide'>U&#8209;Serve</h4>
-                                    <p className='leading-3 text-xs font-extralight'>Student</p>
+                                    <p className='leading-3 text-xs font-extralight'>{role}</p>
                                 </div>
                             </Link>
                         </div>
@@ -163,6 +174,7 @@ export default function Navbar() {
                                                             <Input
                                                                 id="email"
                                                                 className="col-span-3"
+                                                                defaultValue={email}
                                                             />
                                                         </div>
                                                         <div className="grid gap-2">
@@ -174,9 +186,8 @@ export default function Navbar() {
                                                                     <SelectValue placeholder="Select a role" />
                                                                 </SelectTrigger>
                                                                 <SelectContent>
-                                                                    <SelectItem value="volunteer">Volunteer</SelectItem>
-                                                                    <SelectItem value="coordinator">Coordinator</SelectItem>
-                                                                    <SelectItem value="admin">Admin</SelectItem>
+                                                                    <SelectItem value="Student">Student</SelectItem>
+                                                                    <SelectItem value="Organization">Organization</SelectItem>
                                                                 </SelectContent>
                                                             </Select>
                                                         </div>
