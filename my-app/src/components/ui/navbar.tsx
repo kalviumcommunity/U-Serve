@@ -100,9 +100,7 @@ export default function Navbar() {
                                     height="200"
                                     className=" h-[40%] w-[40%]" />
                                 <div>
-                                    <h4 className='text-xl leading-4 font-semibold tracking-wide'>U&#8209;Serve</h4>
-                                    <p className='leading-3 text-xs font-extralight'>{role}</p>
-                                </div>
+                                    <h4 className='text-xl leading-4 font-semibold tracking-wide'>U&#8209;Serve</h4>                                </div>
                             </Link>
                         </div>
 
