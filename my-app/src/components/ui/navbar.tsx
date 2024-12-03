@@ -74,6 +74,8 @@ export default function Navbar() {
 
     const handleLogout = () => {
         Cookies.remove("token");
+        Cookies.remove("email");
+        Cookies.remove("role");
         window.location.reload();
     };
 
